@@ -5,6 +5,15 @@
 
 using namespace std;
 
+void coutVector(vector<int> arr)
+{
+    for (auto i = arr.begin(); i != arr.end(); ++i)
+    {
+        cout << *i << " ";
+    }
+    cout << "\n";
+}
+
 bool isSubsequence(string s, string t)
 {
     cout << s << " " << t << "\n";
@@ -60,6 +69,43 @@ int minimumTotal(vector<vector<int>> &triangle)
     return triangle.at(0).at(0);
 }
 
+void merge(vector<int> &nums1, int m, vector<int> &nums2, int n)
+{
+    int p1 = m - 1;
+    int p2 = n - 1;
+    int pw = m + n - 1;
+
+    cout << p1 << " " << p2 << " " << pw << "\n";
+
+    while (pw >= 0)
+    {
+        if (p1 < 0 && p2 >= 0)
+        {
+            nums1[pw] = nums2[p2];
+            p2--;
+        }
+        else if (p2 < 0 && p1 >= 0)
+        {
+            nums1[pw] = nums1[p1];
+            p1--;
+        }
+        else if (nums1[p1] > nums2[p2])
+        {
+            nums1[pw] = nums1[p1];
+            p1--;
+        }
+        else
+        {
+            nums1[pw] = nums2[p2];
+            p2--;
+        }
+        pw--;
+        coutVector(nums1);
+        coutVector(nums2);
+        cout << "-----------\n";
+    }
+}
+
 int main()
 {
     cout << "--- running script ---"
@@ -67,9 +113,18 @@ int main()
 
     // isSubsequence(string(""), string("abkemces"));
 
-    vector<vector<int>> arr = {{1}, {3, 2}, {5, 8, 4}};
-    // vector<vector<int>> arr = {{-10}};
-    cout << minimumTotal(arr);
+    // vector<vector<int>> arr = {{1}, {3, 2}, {5, 8, 4}};
+    // cout << minimumTotal(arr);
+
+    vector<int> nums1 = {1, 3, 5, 0, 0, 0, 0, 0, 0};
+    vector<int> nums2 = {2, 2, 2, 2, 2, 2};
+    int n = nums2.size();
+    int m = nums1.size() - n;
+    merge(nums1, m, nums2, n);
+    coutVector(nums1);
+
+    // vector<int> num = {1, 1, 2, 3, 5, 8, 13, 21};
+    // coutVector(num);
 
     return 0;
 }
