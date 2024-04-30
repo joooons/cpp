@@ -79,25 +79,21 @@ void merge(vector<int> &nums1, int m, vector<int> &nums2, int n)
 
     while (pw >= 0)
     {
-        if (p1 < 0 && p2 >= 0)
+        if (p1 < 0)
         {
-            nums1[pw] = nums2[p2];
-            p2--;
+            nums1[pw] = nums2[p2--];
         }
-        else if (p2 < 0 && p1 >= 0)
+        else if (p2 < 0)
         {
-            nums1[pw] = nums1[p1];
             p1--;
         }
         else if (nums1[p1] > nums2[p2])
         {
-            nums1[pw] = nums1[p1];
-            p1--;
+            nums1[pw] = nums1[p1--];
         }
         else
         {
-            nums1[pw] = nums2[p2];
-            p2--;
+            nums1[pw] = nums2[p2--];
         }
         pw--;
         coutVector(nums1);
@@ -121,10 +117,8 @@ int main()
     int n = nums2.size();
     int m = nums1.size() - n;
     merge(nums1, m, nums2, n);
-    coutVector(nums1);
 
-    // vector<int> num = {1, 1, 2, 3, 5, 8, 13, 21};
-    // coutVector(num);
+    coutVector(nums1);
 
     return 0;
 }
