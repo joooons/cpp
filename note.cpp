@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <queue>
 
 using namespace std;
 
@@ -102,6 +103,22 @@ void merge(vector<int> &nums1, int m, vector<int> &nums2, int n)
     }
 }
 
+int findKthLargest(vector<int> &nums, int k)
+{
+    priority_queue<int> q;
+    for (int num : nums)
+    {
+        q.push(-num);
+        if (q.size() > k)
+        {
+            q.pop();
+        }
+        cout << num << " " << q.top() << endl;
+    }
+
+    return -q.top();
+}
+
 int main()
 {
     cout << "--- running script ---"
@@ -112,13 +129,16 @@ int main()
     // vector<vector<int>> arr = {{1}, {3, 2}, {5, 8, 4}};
     // cout << minimumTotal(arr);
 
-    vector<int> nums1 = {1, 3, 5, 0, 0, 0, 0, 0, 0};
-    vector<int> nums2 = {2, 2, 2, 2, 2, 2};
-    int n = nums2.size();
-    int m = nums1.size() - n;
-    merge(nums1, m, nums2, n);
+    // vector<int> nums1 = {1, 3, 5, 0, 0, 0, 0, 0, 0};
+    // vector<int> nums2 = {2, 2, 2, 2, 2, 2};
+    // int n = nums2.size();
+    // int m = nums1.size() - n;
+    // merge(nums1, m, nums2, n);
+    // coutVector(nums1);
 
-    coutVector(nums1);
+    vector<int> arr = {3, 2, 0, 1, 7, 3, 7, -2, -4};
+    int k = 2;
+    cout << findKthLargest(arr, k);
 
     return 0;
 }
