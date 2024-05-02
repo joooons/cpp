@@ -106,18 +106,13 @@ int findKthLargest(vector<int> &nums, int k)
 
 int removeElement(vector<int> &nums, int val)
 {
-    int k = nums.size() - 1;
-    int p = 0;
-    while (p < k)
+    int k = 0;
+    for (int num : nums)
     {
-        if (nums[p] == val)
+        if (num != val)
         {
-            nums[p] = nums[k--];
-        }
-        else
-        {
-            p++;
+            nums[k++] = num;
         }
     }
-    return k + 1;
+    return k;
 }
