@@ -6,25 +6,6 @@
 
 using namespace std;
 
-void coutVector(vector<int> arr)
-{
-    for (auto i = arr.begin(); i != arr.end(); ++i)
-    {
-        cout << *i << " ";
-    }
-    cout << "\n";
-}
-
-string showVector(vector<int> arr)
-{
-    string r = "";
-    for (int i = 0; i < arr.size(); ++i)
-    {
-        r = r + " " + to_string(arr[i]);
-    }
-    return r;
-}
-
 bool isSubsequence(string s, string t)
 {
     cout << s << " " << t << "\n";
@@ -86,8 +67,6 @@ void merge(vector<int> &nums1, int m, vector<int> &nums2, int n)
     int p2 = n - 1;
     int pw = m + n - 1;
 
-    cout << p1 << " " << p2 << " " << pw << "\n";
-
     while (pw >= 0)
     {
         if (p1 < 0)
@@ -107,9 +86,6 @@ void merge(vector<int> &nums1, int m, vector<int> &nums2, int n)
             nums1[pw] = nums2[p2--];
         }
         pw--;
-        coutVector(nums1);
-        coutVector(nums2);
-        cout << "-----------\n";
     }
 }
 
@@ -123,7 +99,6 @@ int findKthLargest(vector<int> &nums, int k)
         {
             q.pop();
         }
-        cout << num << " " << q.top() << endl;
     }
 
     return -q.top();
@@ -133,7 +108,6 @@ int removeElement(vector<int> &nums, int val)
 {
     int k = nums.size() - 1;
     int p = 0;
-    cout << "k:" << k << " " << showVector(nums) << endl;
     while (p < k)
     {
         if (nums[p] == val)
@@ -144,34 +118,6 @@ int removeElement(vector<int> &nums, int val)
         {
             p++;
         }
-        cout << "k:" << k << " " << showVector(nums) << endl;
     }
     return k + 1;
-}
-
-int main()
-{
-    cout << "--- running script ---"
-         << "\n";
-
-    // isSubsequence(string(""), string("abkemces"));
-
-    // vector<vector<int>> arr = {{1}, {3, 2}, {5, 8, 4}};
-    // cout << minimumTotal(arr);
-
-    // vector<int> nums1 = {1, 3, 5, 0, 0, 0, 0, 0, 0};
-    // vector<int> nums2 = {2, 2, 2, 2, 2, 2};
-    // int n = nums2.size();
-    // int m = nums1.size() - n;
-    // merge(nums1, m, nums2, n);
-    // coutVector(nums1);
-
-    // vector<int> arr = {3, 2, 0, 1, 7, 3, 7, -2, -4};
-    // int k = 2;
-    // cout << findKthLargest(arr, k);
-
-    vector<int> arr = {3, 2, 2, 3};
-    cout << removeElement(arr, 3);
-
-    return 0;
 }
