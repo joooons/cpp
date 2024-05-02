@@ -1,8 +1,7 @@
-#include "header.h"
-
 #include <iostream>
 #include <vector>
 #include <string>
+#include "includes/vector_functions.h"
 
 using namespace std;
 

@@ -4,6 +4,6 @@
 
 using namespace std;
 
-void coutVector(vector<int> arr);
+void coutVector(vector<int>);
 
-string showVector(vector<int> arr);
+string showVector(vector<int>);
