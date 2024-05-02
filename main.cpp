@@ -3,20 +3,15 @@
 #include <string>
 #include "header/vector_functions.h"
 #include "header/leet.h"
+#include "header/monster.h"
 
 using namespace std;
 
 int main()
 {
-    vector<int> arr = {3, 2, 2, 5, 1, 7, 2, 4};
-    int val = 2;
-
-    cout << "hello this" << endl;
-
-    cout << "showVector() " << showVector(arr) << endl;
-    coutVector(arr);
-
-    cout << removeElement(arr, val) << endl;
+    Monster monster{100};
+    monster.takeDamage(50);
+    cout << "Monster hp: " << monster.getHp() << endl;
 
     return 0;
 }
