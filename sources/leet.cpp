@@ -3,6 +3,9 @@
 #include <vector>
 #include <algorithm>
 #include <queue>
+// #include <map>
+#include <cmath>
+#include <unordered_map>
 
 using namespace std;
 
@@ -135,4 +138,47 @@ int removeDuplicates(vector<int> &nums)
         }
     }
     return k;
+}
+
+int majorityElement(vector<int> &nums)
+{
+    // 169. Majority Element
+    unordered_map<int, int> mp;
+
+    int limit = (nums.size() + 1) / 2;
+
+    for (int num : nums)
+    {
+        if (mp.find(num) == mp.end())
+        {
+            mp[num] = 1;
+        }
+        else
+        {
+            mp[num]++;
+            if (mp[num] >= limit)
+            {
+                return num;
+            }
+        }
+    }
+    return nums[0];
+
+    // while (count < limit)
+    // {
+    //     if (mp.find(nums[i]) == mp.end())
+    //     {
+    //         mp[nums[i]] = 1;
+    //     }
+    //     else
+    //     {
+    //         mp[nums[i]] += 1;
+    //         count = max(count, mp[nums[i]]);
+    //         if (count >= limit)
+    //         {
+    //             return nums[i];
+    //         }
+    //     }
+    //     i++;
+    // }
 }

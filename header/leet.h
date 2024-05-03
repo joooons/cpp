@@ -17,3 +17,5 @@ int findKthLargest(vector<int>, int);
 int removeElement(vector<int> &nums, int);
 
 int removeDuplicates(vector<int> &nums);
+
+int majorityElement(vector<int> &nums);
