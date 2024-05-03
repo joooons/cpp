@@ -15,3 +15,5 @@ void merge(vector<int>, int, vector<int>, int);
 int findKthLargest(vector<int>, int);
 
 int removeElement(vector<int> &nums, int);
+
+int removeDuplicates(vector<int> &nums);

@@ -117,3 +117,22 @@ int removeElement(vector<int> &nums, int val)
     }
     return k;
 }
+
+int removeDuplicates(vector<int> &nums)
+{
+    // 26. Remove Duplicates from Sorted Array
+    int k = 1;
+    if (nums.size() == 1)
+    {
+        return k;
+    }
+    for (int i = 1; i < nums.size(); i++)
+    {
+        if (nums[i] != nums[i - 1])
+        {
+            nums[k] = nums[i];
+            k++;
+        }
+    }
+    return k;
+}
