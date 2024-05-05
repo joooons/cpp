@@ -14,14 +14,13 @@ int main()
     // cout << "Monster hp: " << monster.getHp() << endl;
 
     vector<vector<int>> cases =
-        {{3, 2, 3},
-         {0, 0, 1, 1, 1, 2, 2, 3, 1, 1},
-         {9},
-         {2, 2, 1, 1, 1, 2, 2}};
-
+        {{1, 2, 3, 4, 5, 6, 7},
+         {-1, -100, 3, 99}};
+    vector<int> vals = {3, 2};
     for (int i = 0; i < cases.size(); i++)
     {
-        cout << showVector(cases[i]) << " => " << majorityElement(cases[i]) << endl;
+        rotate(cases[i], vals[i]);
+        cout << showVector(cases[i]) << endl;
     }
 
     return 0;

@@ -163,22 +163,30 @@ int majorityElement(vector<int> &nums)
         }
     }
     return nums[0];
+}
 
-    // while (count < limit)
-    // {
-    //     if (mp.find(nums[i]) == mp.end())
-    //     {
-    //         mp[nums[i]] = 1;
-    //     }
-    //     else
-    //     {
-    //         mp[nums[i]] += 1;
-    //         count = max(count, mp[nums[i]]);
-    //         if (count >= limit)
-    //         {
-    //             return nums[i];
-    //         }
-    //     }
-    //     i++;
-    // }
+void rotate(vector<int> &nums, int k)
+{
+    // 189. Rotate Array
+    int n = k % nums.size();
+    int a, b, temp;
+    int i = 0;
+    int count = 0;
+
+    while (count < nums.size())
+    {
+        a = i;
+        b = (a + nums.size() - n) % nums.size();
+        temp = nums[a];
+        while (b != i)
+        {
+            nums[a] = nums[b];
+            count++;
+            a = b;
+            b = (b + nums.size() - n) % nums.size();
+        }
+        nums[a] = temp;
+        i++;
+        count++;
+    }
 }
