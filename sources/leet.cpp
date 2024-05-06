@@ -6,6 +6,7 @@
 // #include <map>
 #include <cmath>
 #include <unordered_map>
+#include <climits>
 
 using namespace std;
 
@@ -194,5 +195,21 @@ void rotate(vector<int> &nums, int k)
 int maxProfit(vector<int> &prices)
 {
     // 121. Best Time to Buy and Sell Stock
-    return 0;
+
+    int min = INT_MAX;
+    // int max = 0;
+    int profit = 0;
+
+    for (int num : prices)
+    {
+        if (num < min)
+        {
+            min = num;
+        }
+        else if (num - min > profit)
+        {
+            profit = max(profit, num - min);
+        }
+    }
+    return profit;
 }

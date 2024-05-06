@@ -12,8 +12,8 @@ int main()
     vector<vector<int>> cases =
         {{7, 1, 5, 3, 6, 4},
          {7, 6, 4, 3, 1},
-         {4},
-         {7, 15, 1, 9, 3, 10, 0}};
+         vectorOfInt(0, 12, 1),
+         vectorOfInt(0, 12, 15)};
 
     // vector<int> vals = {3, 2};
 
