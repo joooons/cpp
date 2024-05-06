@@ -21,3 +21,5 @@ int removeDuplicates(vector<int> &nums);
 int majorityElement(vector<int> &nums);
 
 void rotate(vector<int> &nums, int);
+
+int maxProfit(vector<int> &prices);

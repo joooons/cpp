@@ -190,3 +190,9 @@ void rotate(vector<int> &nums, int k)
         count++;
     }
 }
+
+int maxProfit(vector<int> &prices)
+{
+    // 121. Best Time to Buy and Sell Stock
+    return 0;
+}
