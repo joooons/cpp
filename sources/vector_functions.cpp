@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <stdlib.h>
+#include <ctime>
 
 using namespace std;
 
@@ -21,4 +23,15 @@ string showVector(vector<int> arr)
         r = r + to_string(arr[i]) + " ";
     }
     return r;
+}
+
+vector<int> vectorOfInt(int min, int max, int len)
+{
+    vector<int> arr;
+    srand(time(NULL));
+    for (int i = 0; i < len; i++)
+    {
+        arr.push_back(rand() % (max - min + 1) + min);
+    }
+    return arr;
 }
