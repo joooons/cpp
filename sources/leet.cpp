@@ -194,22 +194,30 @@ void rotate(vector<int> &nums, int k)
 
 int maxProfit(vector<int> &prices)
 {
-    // 121. Best Time to Buy and Sell Stock
+    // 122. Best Time to Buy and Sell Stock II
 
-    int min = INT_MAX;
-    // int max = 0;
+    // int min = INT_MAX;
     int profit = 0;
 
-    for (int num : prices)
+    // for (int num : prices)
+    // {
+    //     if (num < min)
+    //     {
+    //         min = num;
+    //     }
+    //     else if (num - min > profit)
+    //     {
+    //         profit = max(profit, num - min);
+    //     }
+    // }
+
+    for (int i = 1; i < prices.size(); i++)
     {
-        if (num < min)
+        if (prices[i] > prices[i - 1])
         {
-            min = num;
-        }
-        else if (num - min > profit)
-        {
-            profit = max(profit, num - min);
+            profit += prices[i] - prices[i - 1];
         }
     }
+
     return profit;
 }
