@@ -23,3 +23,5 @@ int majorityElement(vector<int> &nums);
 void rotate(vector<int> &nums, int);
 
 int maxProfit(vector<int> &prices);
+
+bool canJump(vector<int> &nums);

@@ -10,22 +10,22 @@ using namespace std;
 int main()
 {
     vector<vector<int>> cases =
-        {{7, 1, 5, 3, 6, 4},
-         //  {1, 2, 3, 4, 5},
-         //  {7, 6, 4, 3, 1},
-         //  {8},
-         //  vectorOfInt(0, 1000, 2000),
-         vectorOfInt(0, 12, 15)};
+        {{2, 3, 1, 1, 4},
+         {3, 2, 1, 0, 4},
+         vectorOfInt(0, 5, 30),
+         vectorOfInt(0, 6, 30),
+         vectorOfInt(0, 4, 30),
+         vectorOfInt(0, 9, 1)};
 
     // vector<int> vals = {3, 2};
 
-    // for (int i = 0; i < cases.size(); i++)
-    // {
-    //     cout << showVector(cases[i]) << " ==> " << maxProfit(cases[i]) << endl;
-    // }
+    for (int i = 0; i < cases.size(); i++)
+    {
+        cout << showVector(cases[i]) << " -> " << canJump(cases[i]) << endl;
+    }
 
-    vector<int> testArray = vectorOfIntNonDecreasing(0, 10, 20);
-    coutVector(testArray);
+    // vector<int> testArray = vectorOfIntNonDecreasing(0, 10, 20);
+    // coutVector(testArray);
 
     return 0;
 }

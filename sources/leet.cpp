@@ -221,3 +221,23 @@ int maxProfit(vector<int> &prices)
 
     return profit;
 }
+
+bool canJump(vector<int> &nums)
+{
+    // 55. Jump Game
+    int target = nums.size() - 1;
+    int p = target - 1;
+    while (p >= 0)
+    {
+        if (nums[p] >= (target - p))
+        {
+            target = p;
+        }
+        p--;
+    }
+    if (target == 0)
+    {
+        return true;
+    }
+    return false;
+}
