@@ -27,3 +27,5 @@ int maxProfit(vector<int> &prices);
 bool canJump(vector<int> &nums);
 
 int hIndex(vector<int> &citations);
+
+int minPathSum(vector<vector<int>> &grid);

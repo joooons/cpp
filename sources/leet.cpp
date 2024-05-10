@@ -274,3 +274,8 @@ int hIndex(vector<int> &citations)
 
     return final;
 }
+
+int minPathSum(vector<vector<int>> &grid)
+{
+    return 99;
+}
