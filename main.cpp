@@ -10,18 +10,21 @@ using namespace std;
 int main()
 {
     vector<vector<int>> cases =
-        {{2, 3, 1, 1, 4},
-         {3, 2, 1, 0, 4},
-         vectorOfInt(0, 5, 30),
-         vectorOfInt(0, 6, 30),
-         vectorOfInt(0, 4, 30),
-         vectorOfInt(0, 9, 1)};
+        {{7, 7, 2, 1, 1, 9},
+         {7, 7, 7, 7, 7, 7, 7, 7, 7, 7},
+         {7, 7, 7},
+         {3, 3, 3, 3, 3, 3, 3, 3, 3},
+         {5, 5, 5, 5, 5},
+         vectorOfIntNonDecreasing(0, 5, 10),
+         vectorOfInt(0, 15, 11),
+         vectorOfIntNonDecreasing(0, 24, 12)};
 
     // vector<int> vals = {3, 2};
 
     for (int i = 0; i < cases.size(); i++)
     {
-        cout << showVector(cases[i]) << " -> " << canJump(cases[i]) << endl;
+        cout << showVector(cases[i]) << " ::\n";
+        hIndex(cases[i]);
     }
 
     // vector<int> testArray = vectorOfIntNonDecreasing(0, 10, 20);

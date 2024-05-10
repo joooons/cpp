@@ -241,3 +241,36 @@ bool canJump(vector<int> &nums)
     }
     return false;
 }
+
+int hIndex(vector<int> &citations)
+{
+    // 274. H-Index
+    priority_queue<int> q;
+    for (int num : citations)
+        q.push(num);
+
+    int k = q.top();
+    q.pop();
+    int count = min(k, 1);
+    int final = 0;
+    for (int i = 1; i < citations.size(); i++)
+    {
+        if (k != q.top())
+        {
+            if (final == max(min(count, k), final))
+                break;
+            final = max(min(count, k), final);
+            if (final == k)
+                break;
+            cout << k << ": " << count << " -> " << final << endl;
+            k = q.top();
+        }
+        count++;
+        q.pop();
+    }
+    final = max(min(count, k), final);
+    cout << k << ": " << count << " -> " << final << endl;
+    cout << "final answer: " << final << "\n\n";
+
+    return final;
+}
