@@ -10,13 +10,15 @@ using namespace std;
 int main()
 {
     // vector<vector<int>> cases = {{1, 2, 3}, {4, 5, 6}};
+    vector<vector<int>> box = vectorOfVectorOfInt(3, 4, 0, 3);
 
-    vector<vector<int>> array = vectorOfVectorOfInt(5, 7, 22);
-
-    for (int i = 0; i < array.size(); i++)
+    for (int i = 0; i < box.size(); i++)
     {
-        coutVector(array[i]);
+        coutVector(box[i]);
     }
+    cout << " ----------------\n";
+
+    minPathSum(box);
 
     return 0;
 }

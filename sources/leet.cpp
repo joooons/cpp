@@ -277,5 +277,32 @@ int hIndex(vector<int> &citations)
 
 int minPathSum(vector<vector<int>> &grid)
 {
-    return 99;
+    int lim = grid[0].size();
+    int *arr = new int[lim];
+
+    arr[0] = grid[0][0];
+    cout << arr[0] << " ";
+
+    for (int j = 1; j < lim; j++)
+    {
+        arr[j] = grid[0][j] + arr[j - 1];
+        cout << arr[j] << " ";
+    }
+
+    for (int i = 1; i < grid.size(); i++)
+    {
+        arr[0] = grid[i][0] + arr[0];
+        cout << "\n"
+             << arr[0] << " ";
+        for (int j = 1; j < grid[i].size(); j++)
+        {
+            int a = arr[j - 1];
+            int b = arr[j];
+            arr[j] = grid[i][j] + min(a, b);
+            cout << arr[j] << " ";
+        }
+    }
+
+    cout << "\nfinal answer: " << arr[lim - 1];
+    return arr[lim - 1];
 }
