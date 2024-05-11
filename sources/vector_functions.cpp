@@ -62,7 +62,7 @@ vector<int> vectorOfIntNonDecreasing(int a, int b, int k)
     return arr;
 }
 
-vector<vector<int>> vectorOfVectorOfInt(int x, int y, int min = 0, int max = 10)
+vector<vector<int>> vectorOfVectorOfIntDetailed(int x, int y, int min = 0, int max = 10)
 {
     vector<vector<int>> arr;
     srand(time(NULL));
@@ -78,4 +78,19 @@ vector<vector<int>> vectorOfVectorOfInt(int x, int y, int min = 0, int max = 10)
     }
 
     return arr;
+}
+
+vector<vector<int>> vectorOfVectorOfInt(int x, int y)
+{
+    return vectorOfVectorOfIntDetailed(x, y, 0, 9);
+}
+
+vector<vector<int>> vectorOfVectorOfInt(int x, int y, int max)
+{
+    return vectorOfVectorOfIntDetailed(x, y, 0, max);
+}
+
+vector<vector<int>> vectorOfVectorOfInt(int x, int y, int min, int max)
+{
+    return vectorOfVectorOfIntDetailed(x, y, min, max);
 }

@@ -11,7 +11,7 @@ int main()
 {
     // vector<vector<int>> cases = {{1, 2, 3}, {4, 5, 6}};
 
-    vector<vector<int>> array = vectorOfVectorOfInt(5, 7, 0, 9);
+    vector<vector<int>> array = vectorOfVectorOfInt(5, 7, 22);
 
     for (int i = 0; i < array.size(); i++)
     {
