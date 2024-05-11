@@ -61,3 +61,21 @@ vector<int> vectorOfIntNonDecreasing(int a, int b, int k)
     }
     return arr;
 }
+
+vector<vector<int>> vectorOfVectorOfInt(int x, int y, int min = 0, int max = 10)
+{
+    vector<vector<int>> arr;
+    srand(time(NULL));
+
+    for (int i = 0; i < x; i++)
+    {
+        arr.push_back({});
+        for (int j = 0; j < y; j++)
+        {
+            int n = rand() % (max - min + 1);
+            arr[i].push_back(n);
+        }
+    }
+
+    return arr;
+}
