@@ -62,7 +62,7 @@ vector<int> vectorOfIntNonDecreasing(int a, int b, int k)
     return arr;
 }
 
-vector<vector<int>> vectorOfVectorOfIntDetailed(int x, int y, int min = 0, int max = 10)
+vector<vector<int>> vectorOfVectorOfIntDetailed(int x, int y, int min, int max)
 {
     vector<vector<int>> arr;
     srand(time(NULL));
