@@ -8,6 +8,8 @@
 #include <unordered_map>
 #include <climits>
 
+#include "../header/leet.h"
+
 using namespace std;
 
 bool isSubsequence(string s, string t)
@@ -306,3 +308,71 @@ int minPathSum(vector<vector<int>> &grid)
     cout << "\nfinal answer: " << arr[lim - 1];
     return arr[lim - 1];
 }
+
+RandomizedSet::RandomizedSet() : mp() {}
+
+bool RandomizedSet::insert(int val)
+{
+    if (mp.find(val) != mp.end())
+    {
+        return false;
+    }
+    mp[val] = 1;
+    return true;
+}
+
+bool RandomizedSet::remove(int val)
+{
+    if (mp.find(val) != mp.end())
+    {
+        mp.erase(val);
+        return true;
+    }
+    return false;
+}
+
+int RandomizedSet::getRandom()
+{
+    int randInt = rand() % mp.size();
+    auto point = mp.begin();
+    advance(point, randInt);
+    return point->first;
+}
+
+// class RandomizedSet
+// {
+// public:
+//     unordered_map<int, int> mp;
+
+//     RandomizedSet()
+//     {
+//     }
+
+//     bool insert(int val)
+//     {
+//         if (mp.find(val) != mp.end())
+//         {
+//             return false;
+//         }
+//         mp[val] = 1;
+//         return true;
+//     }
+
+//     bool remove(int val)
+//     {
+//         if (mp.find(val) != mp.end())
+//         {
+//             mp.erase(val);
+//             return true;
+//         }
+//         return false;
+//     }
+
+//     int getRandom()
+//     {
+//         int randInt = rand() % mp.size();
+//         auto point = mp.begin();
+//         advance(point, randInt);
+//         return point->first;
+//     }
+// };

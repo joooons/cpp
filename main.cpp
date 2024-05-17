@@ -9,16 +9,41 @@ using namespace std;
 
 int main()
 {
-    // vector<vector<int>> cases = {{1, 2, 3}, {4, 5, 6}};
-    vector<vector<int>> box = vectorOfVectorOfInt(3, 4, 0, 3);
+    // vector<vector<int>> box = vectorOfVectorOfInt(6, 6, 0, 1);
 
-    for (int i = 0; i < box.size(); i++)
+    // for (int i = 0; i < box.size(); i++)
+    // {
+    //     coutVector(box[i]);
+    // }
+    // cout << " ----------------\n";
+
+    // minPathSum(box);
+
+    RandomizedSet thing;
+    thing.insert(5);
+    cout << thing.getRandom() << endl;
+    thing.insert(13);
+    thing.remove(5);
+    cout << thing.getRandom() << endl;
+    thing.remove(13);
+    thing.insert(1);
+    thing.insert(5);
+    thing.insert(2);
+    thing.insert(6);
+    thing.insert(4);
+    thing.insert(1);
+    thing.insert(1);
+    thing.insert(1);
+    thing.insert(1);
+    thing.insert(1);
+    thing.insert(1);
+    thing.insert(1);
+    thing.insert(1);
+    thing.insert(3);
+    for (int i = 0; i < 10; i++)
     {
-        coutVector(box[i]);
+        cout << thing.getRandom() << " ";
     }
-    cout << " ----------------\n";
-
-    minPathSum(box);
 
     return 0;
 }

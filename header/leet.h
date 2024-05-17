@@ -1,8 +1,12 @@
+#ifndef LEET_H
+#define LEET_H
+
 #include <iostream>
 #include <string>
 #include <vector>
 #include <algorithm>
 #include <queue>
+#include <unordered_map>
 
 using namespace std;
 
@@ -29,3 +33,17 @@ bool canJump(vector<int> &nums);
 int hIndex(vector<int> &citations);
 
 int minPathSum(vector<vector<int>> &grid);
+
+class RandomizedSet
+{
+private:
+    unordered_map<int, int> mp;
+
+public:
+    RandomizedSet();
+    bool insert(int val);
+    bool remove(int val);
+    int getRandom();
+};
+
+#endif
